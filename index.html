@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+</head>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+        button{
+            background-color: aqua;
+            height: 70px;
+            width: 70px;
+            border: none;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 37px;
+        }
+        .o-btn{
+            background-color: rgb(250, 153, 8);
+            height: 70px;
+            width: 70px;
+            border: none;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 37px;
+        }
+        .total{
+            background-color: black;
+            display: flex;
+            color: white;
+            font-size: 38px;
+            height: 50px;
+            flex: 1 auto;
+            border: 1px solid white;
+        }
+
+    </style>
+<body>
+    <p class="total" align="right">
+    <div class="math">
+    <p>      
+    <button onclick="update('7');">7</button>
+    <button onclick="update('8');">8</button>
+    <button onclick="update('9');">9</button>
+    <button class="o-btn" onclick="update('+');">+</button>
+    </p>
+
+    <p>
+    <button onclick="update('4');">4</button>
+    <button onclick="update('5');">5</button>
+    <button onclick="update('6');">6</button>   
+    <button class="o-btn" onclick="update('-');">-</button>
+    </p>
+
+    <p>
+    <button onclick="update('1');">1</button>
+    <button onclick="update('2');">2</button>   
+    <button onclick="update('3');">3</button>
+    <button class="o-btn" onclick="update('*');">*</button>
+    </p>
+    
+    <p>
+    <button onclick="update('0');">0</button>
+    <button onclick="update('.');">.</button>
+    
+    <button onclick="
+    calculator = eval(calculator);
+    console.log(calculator);
+    total();
+    localStorage.setItem('calculator',calculator);
+    ">=</button>
+    
+    <button class="o-btn" onclick="update('/');">/</button>
+    </p>
+        </div>
+    <p>
+    <button onclick="
+    calculator = '';
+    console.log(calculator);
+    total();
+
+    
+    
+    localStorage.setItem('calculator', calculator);
+    ">Clear</button>
+    </p> 
+    
+    <script>
+        let calculator = localStorage.getItem('calculator') || '';
+        
+        total();
+        
+        function update(value){
+            calculator += value;
+            total();
+            localStorage.getItem('calculator',);
+            console.log(`${calculator}`);
+        }
+
+        function total() {
+            localStorage.setItem('calculator',calculator );
+            document.querySelector('.total')
+            .innerHTML = `${calculator}`
+        }
+    </script>    
+</body>
+</html>
